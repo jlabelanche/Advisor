@@ -1,0 +1,2 @@
+Restroom.create(name: 'Museo Nacional del Prado', access: 'Public', facilities: 'Female and Male', accessible_facilities: 'Yes', opening: 'Business hours', baby_changing: 'Yes', fee: 'Free', province: 'Madrid', city: 'Madrid', notes: 'Notas sobre el lugar')
+Restroom.create(name: 'Bu!', access: 'Private', facilities: 'Female and Male', accessible_facilities: 'Yes', opening: 'Business hours', baby_changing: 'No', fee: 'Free', province: 'Zaragoza', city: 'Zaragoza', notes: 'Notas sobre el lugar')

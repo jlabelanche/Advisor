@@ -1,0 +1,14 @@
+<h1> <%= @restroom.name %> </h1>
+<ul>
+<li><%= @restroom.name %>  - <%= @restroom.access %> - <%= @restroom.facilities %> - <%= @restroom.fee %> - <%= @restroom.accessible_facilities %> - <%= @restroom.opening %> - <%= @restroom.baby_changing %> - <%= @restroom.access %> - <%= @restroom.province %> - <%= @restroom.city %> - <%= @restroom.notes %>   
+</li>
+	<p><h2><div class= "average_rating" >Average Rating : <div id="average_rating" style="display:inline;"><%= @restroom.avg_rating %></div></div></h2></p>
+	
+	<% (1..5).each do |i| %>
+    <li class="rating_star" id="<%= @restroom.id %>_<%= i %>" data-stars="<%= i %>" data-form-id="<%= @restroom.id %>"></li>
+<% end %>
+
+
+		
+</ul>
+<div><p>Link a NEW <%= link_to("Votes", new_restroom_vote_path(@restroom)) %></p></div>

@@ -1,0 +1,22 @@
+#mapholder {
+	width: 800px;
+	height: 500px;
+}
+
+.rating_star {
+  float:left;
+  list-style: none;
+  margin: 0;
+  padding: 0; 
+  width: 25px;
+  height: 25px;
+  background: url(/star.png) top left;
+} 
+
+.rating_star.on {
+  background: url(/star-full.png) 0 -25px;
+} 
+
+.average_rating {
+	color: lightblue;
+}
