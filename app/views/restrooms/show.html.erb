@@ -1,14 +1,45 @@
-<h1> <%= @restroom.name %> </h1>
-<ul>
-<li><%= @restroom.name %>  - <%= @restroom.access %> - <%= @restroom.facilities %> - <%= @restroom.fee %> - <%= @restroom.accessible_facilities %> - <%= @restroom.opening %> - <%= @restroom.baby_changing %> - <%= @restroom.access %> - <%= @restroom.province %> - <%= @restroom.city %> - <%= @restroom.notes %>   
-</li>
-	<p><h2><div class= "average_rating" >Average Rating : <div id="average_rating" style="display:inline;"><%= @restroom.avg_rating %></div></div></h2></p>
-	
-	<% (1..5).each do |i| %>
-    <li class="rating_star" id="<%= @restroom.id %>_<%= i %>" data-stars="<%= i %>" data-form-id="<%= @restroom.id %>"></li>
-<% end %>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+        <script src="https://maps.googleapis.com/maps/api/js"></script>
 
+		        <title>Restrooms advisor</title>
+		    </head>
 
-		
-</ul>
-<div><p>Link a NEW <%= link_to("Votes", new_restroom_vote_path(@restroom)) %></p></div>
+  <body onload="getLocation();" >
+		<div class="row">
+		  <div class="col-sm-3">
+		   <h1> <%= @restroom.name %> </h1>
+					<ul>
+						
+								<p><strong>Access:</strong><%= @restroom.access %></p>
+					      <p><strong>Facilities:</strong><%= @restroom.facilities %></p>
+					      <p><strong>Accesible facilities:</strong><%= @restroom.accessible_facilities %></p>
+					      <p><strong>Opening:</strong><%= @restroom.opening %></p>
+					      <p><strong>Baby changing:</strong><%= @restroom.baby_changing %></p>
+					      <p><strong>Fee:</strong><%= @restroom.fee %></p>
+					      <p><strong>Notes:</strong><%= @restroom.notes %></p>
+								<p><%= @restroom.province %></p>
+								<p><%= @restroom.city %></p>
+								
+						
+							<p><h2><div class= "average_rating" >Average Rating : <div id="average_rating" style="display:inline;"><%= @restroom.avg_rating %></div></div></h2></p>
+							
+							<% (1..5).each do |i| %>
+						    <li class="rating_star" id="<%= @restroom.id %>_<%= i %>" data-stars="<%= i %>" data-form-id="<%= @restroom.id %>"></li>
+						<% end %>
+					</ul>
+			</div>
+				  <div id="mapholder" class="col-sm-8">
+				  </div>
+		</div>
+
+    	<script type="text/javascript" src=""></script>
+    	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  </body>
+
+</html>

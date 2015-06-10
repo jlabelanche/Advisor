@@ -19,9 +19,8 @@ var x = document.getElementById("demo");
 	center:latlon,zoom:14,
 	mapTypeId:google.maps.MapTypeId.ROADMAP,
 	mapTypeControl:false,
-	navigationControlOptions:{style:google.maps.NavigationControlStyle.SMALL}
-	}
-	 var mapStyle = [{
+	navigationControlOptions:{style:google.maps.NavigationControlStyle.SMALL},
+	styles: [{
 	 	featureType:"all",
 	 	elementType:"labels.text.fill", stylers:[{color:"#ffffff"}]}, {featureType:"all", elementType:"labels.text.stroke", stylers:[{color:"#000000"},{lightness:13}]},
 	 	{featureType:"administrative",
@@ -38,6 +37,9 @@ var x = document.getElementById("demo");
 	 	{lightness:16}]},{featureType:"road.local", elementType:"geometry",
 	 	stylers:[{color:"#000000"}]}, {featureType:"transit", elementType :"all", stylers:[{color:"#146474"}]}, {featureType:"water",elementType:"all",stylers:[{color:"#021019"}]
 	 }]
+
+	};
+	 
 
 				    
 	var map = new google.maps.Map(document.getElementById("mapholder"), myOptions);

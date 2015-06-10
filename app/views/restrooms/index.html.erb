@@ -12,6 +12,7 @@
   <body onload="getLocation();" >
 	   <h1 class="Logo"> List of restrooms  </h1>
 
+				<div><p>Add a restroom <button class="New_restroom"><%= link_to("New restroom", new_restroom_path(@restroom)) %></button></p></div>
 			
 				<div class="row">
 				  <div class="col-sm-3">
@@ -26,18 +27,16 @@
 					      <p><strong>Fee:</strong><%= restroom.fee %></p>
 					      <p><strong>Notes:</strong><%= restroom.notes %></p>
 					      <p><div class= "average_rating" >Average Rating : <div id="average_rating" style="display:inline;"><%= restroom.avg_rating %></div></div></p>
+								<button><li> <%= link_to("Edit", edit_restroom_path(restroom.id))  %> </button>
+							 	<button><%= link_to "Destroy", restroom_path(restroom), method: :delete, data: {confirm: "Are you sure?"} %></button> </li>
 
 				       </ul>
 				    <%end%>
 			 	  </div>
 
 				  <div id="mapholder" class="col-sm-8">
-				   
-
-				
 				  </div>
 				</div>
-				
 
     	<script type="text/javascript" src=""></script>
     	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
