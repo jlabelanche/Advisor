@@ -1,5 +1,8 @@
 class Restroom < ActiveRecord::Base
 	has_many :votes
+	
+  	geocoded_by :address
+    after_validation :geocode, :if => :address_changed?
 
 
 	def self.list_of_restrooms(param)

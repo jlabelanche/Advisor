@@ -11,6 +11,9 @@ class CreateRestrooms < ActiveRecord::Migration
     	t.string :province
     	t.string :city
     	t.string :notes
+        t.string :address 
+        t.float  :latitude
+        t.float  :longitude
 
       t.timestamps null: false
     end

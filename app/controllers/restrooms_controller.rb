@@ -6,9 +6,19 @@ class RestroomsController < ApplicationController
 
 	def index
 		@list_restrooms = Restroom.list_of_restrooms(10)
-
+		@restrooms = Restroom.all
+		@hash = Gmaps4rails.build_markers(@restrooms) do |restroom, marker|
+		  marker.lat restroom.latitude
+		  marker.lng restroom.longitude
+		end
 	end
+
 	def show
+		@restrooms = Restroom.find params[:id]
+		@hash = Gmaps4rails.build_markers(@restrooms) do |restroom, marker|
+		  marker.lat restroom.latitude
+		  marker.lng restroom.longitude
+		end
 		begin
     		@restroom = Restroom.find params[:id]
     	rescue ActiveRecord::RecordNotFound
@@ -53,7 +63,7 @@ class RestroomsController < ApplicationController
 
 	private
 	def restroom_params
-		params.require(:restroom).permit(:name, :access, :facilities, :accessible_facilities, :opening, :baby_changing, :fee, :province, :city, :notes)
+		params.require(:restroom).permit(:name, :access, :facilities, :accessible_facilities, :opening, :baby_changing, :fee, :province, :city, :notes, :address, :latitude, :longitude)
 	end
 
 end
