@@ -7,11 +7,17 @@ class RestroomsController < ApplicationController
 	def index
 		@list_restrooms = Restroom.list_of_restrooms(10)
 		@restrooms = Restroom.all
+<<<<<<< HEAD
 		
 		@hash = Gmaps4rails.build_markers(@restrooms) do |restroom, marker|
 		  marker.lat restroom.latitude
 		  marker.lng restroom.longitude
 		  
+=======
+		@hash = Gmaps4rails.build_markers(@restrooms) do |restroom, marker|
+		  marker.lat restroom.latitude
+		  marker.lng restroom.longitude
+>>>>>>> 9b7d334bae36bba83f4ff740d5624e62a66f62e6
 		end
 	end
 

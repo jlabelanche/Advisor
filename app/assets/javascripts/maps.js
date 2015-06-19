@@ -1,14 +1,22 @@
+<<<<<<< HEAD
 $(document).ready(function(){
 
 var handler = Gmaps.build('Google');
 handler.buildMap({ internal: {id: 'geolocation'} }, function(){
   if(navigator.geolocation)
     navigator.geolocation.getCurrentPosition();
+=======
+var handler = Gmaps.build('Google');
+handler.buildMap({ internal: {id: 'geolocation'} }, function(){
+  if(navigator.geolocation)
+    navigator.geolocation.getCurrentPosition(displayOnMap);
+>>>>>>> 9b7d334bae36bba83f4ff740d5624e62a66f62e6
 });
 
 function displayOnMap(position){
   var marker = handler.addMarker({
     lat: position.coords.latitude,
+<<<<<<< HEAD
     lng: position.coords.longitude,
   });
   handler.map.centerOn(marker);
@@ -17,6 +25,16 @@ function displayOnMap(position){
 
 
 /*	initialize();
+=======
+    lng: position.coords.longitude
+  });
+  handler.map.centerOn(marker);
+};
+
+/*$(document).ready(function(){
+
+	initialize();
+>>>>>>> 9b7d334bae36bba83f4ff740d5624e62a66f62e6
 function initialize() {
 
 var map;
