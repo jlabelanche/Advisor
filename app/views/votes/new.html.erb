@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="">
+
+        <title>NEW</title>
+    </head>
+
+    <body>
+    <h1> New </h1>
+
+	<%= form_for [@restroom, @vote] do |f| %>
+		
+		<%= f.label :date %>
+     	<%= f.date_select :date, :order =>[:day, :month, :year] %>
+		<br>
+		<%= f.label :comment %>
+		<%= f.text_area :comment, size: 4 %>
+		<br>
+
+		<%= f.submit 'Save' %>
+
+	<% end %>
+
+    <script type="text/javascript" src=""></script>
+    </body>
+</html>
