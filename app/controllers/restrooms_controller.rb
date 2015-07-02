@@ -5,23 +5,23 @@ class RestroomsController < ApplicationController
 	end
 
 	def index
-		@list_restrooms = Restroom.list_of_restrooms(10)
+
+		@last_restrooms = Restroom.last_restrooms(10)
 		@restrooms = Restroom.all
-<<<<<<< HEAD
 		
 		@hash = Gmaps4rails.build_markers(@restrooms) do |restroom, marker|
 		  marker.lat restroom.latitude
 		  marker.lng restroom.longitude
 		  
-=======
-		@hash = Gmaps4rails.build_markers(@restrooms) do |restroom, marker|
-		  marker.lat restroom.latitude
-		  marker.lng restroom.longitude
->>>>>>> 9b7d334bae36bba83f4ff740d5624e62a66f62e6
 		end
+	end
+	def markers
+		positions = Restroom.select(:id, :latitude, :longitude)
+		render json: positions
 	end
 
 	def show
+
 		@restrooms = Restroom.find params[:id]
 		@hash = Gmaps4rails.build_markers(@restrooms) do |restroom, marker|
 		  marker.lat restroom.latitude
@@ -33,6 +33,12 @@ class RestroomsController < ApplicationController
     		render 'no_record_found', layout: 'no_record_found'
    		end
    	end
+
+   	def search
+		@last_restrooms = Restroom.search params[:city]
+		
+		render 'index'
+	 end
 
    	def new
 		@restroom = Restroom.new

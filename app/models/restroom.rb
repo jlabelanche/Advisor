@@ -5,7 +5,7 @@ class Restroom < ActiveRecord::Base
     after_validation :geocode, :if => :address_changed?
 
 
-	def self.list_of_restrooms(param)
+	def self.last_restrooms(param)
 		Restroom.order(created_at: :desc).limit param
 	end
 
@@ -23,6 +23,11 @@ class Restroom < ActiveRecord::Base
 	    count
 	  	end
 	end
+
+	def self.search city
+   	Restroom.where("city LIKE '%" + city.to_s + "%'")
+    end
+
 end
 
 
