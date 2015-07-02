@@ -1,6 +1,8 @@
 
 body{
-  overflow: hidden;
+  height: 100%;
+  max-height: 100%;
+  background-color: #FFF;
 }
 
 header{
@@ -15,30 +17,57 @@ nav {
   width: auto;
 
 }
-
+.Last{
+  margin-left: 10px;
+  color: black;
+}
 .btn-primary {
   float: right;
-  margin-top: 7px;
-  
-  margin-left: 250px;
+  margin-top: 3px;
+  margin-left: 50px;
+  margin-bottom: 5px;
+  margin-right: 50px;
+  color: white;
 }
 #city{
   width: 500px;
   margin-top: 10px;
 }
 
-.row1{
+.maincolum{
   margin-top: 30px;
-  overflow: auto;
-  overflow-y: scroll;
-  
+  height: 100%;
+  padding: 10px;    
 }
+
+#colum {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  max-height: 400px;
+  margin-top: 20px;
+
+}
+
+.poop{
+  margin-left: 30px;
+  padding: 10px;
+}
+
 #logo {
   width: 1400px;
   height: 200px;
   margin-top: -100px;
   margin:0;
   margin-left: -40px;
+}
+
+.NewRestroom {
+  margin-top: 20px;
+  padding: 40px;
+}
+
+.HappyToilet {
+  margin-top: 70px;
 }
 
 #name {
@@ -53,6 +82,7 @@ nav {
 #map {
 	width: 800px;
 	height: 500px;
+  margin-top: 30px;
 }
 
 .controls {
@@ -109,6 +139,7 @@ nav {
   list-style: none;
   margin: 5px;
   padding: 5px; 
+  padding-bottom: 50px;
   width: 64px;
   height: 64px;
   background: url(/rollempty.png) top left;

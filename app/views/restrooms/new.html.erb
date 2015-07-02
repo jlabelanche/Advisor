@@ -1,35 +1,42 @@
+<body>
 
-<%= form_for @restroom do |f| %>
- <%= f.label :name %>
- <%= f.text_field :name %>
- <br>
- <%= f.label :facilities %>
- <%= f.text_field :facilities %>
- <br>
- <%= f.label :accessible_facilities %>
- <%= f.text_field :accessible_facilities %>
- <br>
- <%= f.label :opening %>
- <%= f.text_field :opening %>
- <br>
- <%= f.label :baby_changing %>
- <%= f.text_field :baby_changing %>
- <br>
- <%= f.label :fee %>
- <%= f.text_field :fee %>
- <br>
- <%= f.label :province %>
- <%= f.text_field :province %>
- <br>
- <%= f.label :city %>
- <%= f.text_field :city %>
- <br>
- <%= f.label :notes %>
- <%= f.text_field :notes %>
- <br>
- <%= f.label :address %>
- <%= f.text_field :address %>
- <br>
+			<div class="NewRestroom col-md-6">
+			<%= form_for @restroom do |f| %>
+			 <p><%= f.label :name %></p>
+			 <%= f.text_field :name, class: "form-control" %>
+			 <br>
+			 <p><%= f.label :facilities %></p>
+			 <%= f.select(:facilities, options_for_select([['Male', 'Male'], ['Female', 'Female'], ['Unisex', 'Unisex']]), {}, {class: "form-control1"}) %>			 <br>
+			 <p><%= f.label :accessible_facilities %></p>
+  			 <%= f.select(:accessible_facilities, options_for_select([['YES', 'YES'], ['NO', 'NO']]), {}, {class: "form-control1"}) %>
+			 <br>
+			 <p><%= f.label :opening %></p>
+			 <%= f.text_field :opening %>
+			 <br>
+			 <p><%= f.label :baby_changing %></p>
+			 <%= f.select(:baby_changing, options_for_select([['YES', 'YES'], ['NO', 'NO']]), {}, {class: "form-control1"}) %>			 <br>
+			 <p><%= f.label :fee %></p>
+			 <%= f.select(:fee, options_for_select([['YES', 'YES'], ['NO', 'NO']]), {}, {class: "form-control1"}) %>
+			 <br>
+			 <p><%= f.label :province %></p>
+			 <%= f.text_field :province %>
+			 <br>
+			 <p><%= f.label :city %></p>
+			 <%= f.text_field :city %>
+			 <br>
+			 <p> <%= f.label :notes %></p>
+			 <%= f.text_area :notes, class: "form-control" %>
+		     <br>
+			 <p><%= f.label :address %></p>
+			 <%= f.text_field :address %>
+			 <br>
 
- <%= f.submit 'Save' %>
-<% end %>
+			 <%= f.submit 'Save' %>
+			<% end %>
+			</div>
+
+			<div class="HappyToilet col-md-6">
+				<img src="/happyroll.png">
+			</div>
+
+</body>	

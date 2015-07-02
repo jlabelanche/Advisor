@@ -1,15 +1,16 @@
 <body>
 	
 	<div class="row row1">
-		  <div id="colum" class="col-md-3">
-			    <h3> <% @last_restrooms.each do |restroom| %> <h3>
+		  <div id="colum" class="col-md-4">
+		  		<h1 class="Last"><strong> Last Uploaded</strong></h1>
+			    <h2> <% @last_restrooms.each do |restroom| %> <h2>
 			  <ul>
-			    <li><p id='linktoposition' data-latitude="<%= restroom.latitude %>" data-longitude="<%= restroom.longitude %>"><%=link_to(restroom.name, restroom_path(restroom.id), class: "linktoposition")%></p></li>
+			    <p id='linktoposition' data-latitude="<%= restroom.latitude %>" data-longitude="<%= restroom.longitude %>"><%=link_to(restroom.name, restroom_path(restroom.id), class: "linktoposition")%></p>
 			      
 			     
-			      <p><div class= "average_rating" >Average Rating : <div id="average_rating" style="display:inline;"><%= restroom.avg_rating %></div></div></p>
-						<button><li> <%= link_to("Edit", edit_restroom_path(restroom.id))  %> </button>
-					 	<button><%= link_to "Destroy", restroom_path(restroom), method: :delete, data: {confirm: "Are you sure?"} %></button> </li>
+			      <p><div class= "average_rating" > Rating : <div id="average_rating" style="display:inline;"><%= restroom.avg_rating %><img class="poop" src="/happypoop.png"></div></div></p>
+						<!--<button><li> <%= link_to("Edit", edit_restroom_path(restroom.id))  %> </button>
+					 	<button><%= link_to "Destroy", restroom_path(restroom), method: :delete, data: {confirm: "Are you sure?"} %></button> </li>-->
 		      </ul>
 		    	 <%end%>
 			  
@@ -24,4 +25,3 @@
 </body>
 
 </html>
-

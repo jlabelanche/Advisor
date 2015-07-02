@@ -1,26 +1,28 @@
 
-		<div class="row">
-		  <div class="col-sm-4">
+		<div class="maincolum">
+		  <div id="colum" class="col-sm-4">
 		   <h1> <%= @restroom.name %> </h1>
+					
+							
+							<% (1..5).each do |i| %>
+						    <li class="rating_star" id="<%= @restroom.id %>_<%= i %>" data-stars="<%= i %>" data-form-id="<%= @restroom.id %>"></li>
+						<% end %>
+						<p><h2><div class= "average_rating" >Average Rating : <div id="average_rating" style="display:inline;"><%= @restroom.avg_rating %></div></div></h2></p>
+
 					<ul>
-						
-						  <p><strong>Access:</strong><%= @restroom.access %></p>
+						  
 					      <p><strong>Facilities:</strong><%= @restroom.facilities %></p>
 					      <p><strong>Accesible facilities:</strong><%= @restroom.accessible_facilities %></p>
 					      <p><strong>Opening:</strong><%= @restroom.opening %></p>
 					      <p><strong>Baby changing:</strong><%= @restroom.baby_changing %></p>
 					      <p><strong>Fee:</strong><%= @restroom.fee %></p>
 					      <p><strong>Notes:</strong><%= @restroom.notes %></p>
-								<p><%= @restroom.province %></p>
-								<p><%= @restroom.city %></p>
+								<p><strong>Province:</strong><%= @restroom.province %></p>
+								<p><strong>City:</strong><%= @restroom.city %></p>
+
 								
 								<input type="hidden" id="hidden_data" data-lat="<%= @restroom.latitude %>", data-lon="<%=@restroom.longitude%>">
 						
-							<p><h2><div class= "average_rating" >Average Rating : <div id="average_rating" style="display:inline;"><%= @restroom.avg_rating %></div></div></h2></p>
-							
-							<% (1..5).each do |i| %>
-						    <li class="rating_star" id="<%= @restroom.id %>_<%= i %>" data-stars="<%= i %>" data-form-id="<%= @restroom.id %>"></li>
-						<% end %>
 					</ul>
 		  </div>
 				  

@@ -153,9 +153,9 @@ styles: mapStyle} }, function(){
       lat: position.coords.latitude,
       lng: position.coords.longitude,
       picture: {
-        url: "/here.png",
-        width:  36,
-        height: 36
+        url: "/happypoop1.png",
+        width:  40,
+        height: 40
       },
         title: "You're here",
     });

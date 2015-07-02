@@ -68,9 +68,9 @@ class RestroomsController < ApplicationController
 	end
 
 	def destroy
-		restroom = Restroom.find  params[:id]
+		restroom = Restroom.find params[:id]
 		restroom.destroy
-		redirect_to project_path
+		redirect_to root_path
 
 	end
   	
@@ -81,6 +81,5 @@ class RestroomsController < ApplicationController
 	end
 
 end
-
 
 
